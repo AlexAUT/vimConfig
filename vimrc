@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tenfyzhong/CompleteParameter.vim'
 
 
 " The following are examples of different formats supported.
@@ -57,7 +58,7 @@ syntax on
 colorscheme Benokai
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 
 autocmd FileType c,cpp,ts ClangFormatAutoEnable
 
@@ -93,4 +94,12 @@ set cino=>N-s,g0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Increase git gutter update interval
-set updatetime=1000
+set updatetime=100
+
+" Minimal setup for parameter completion
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+
