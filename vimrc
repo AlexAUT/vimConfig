@@ -20,6 +20,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tenfyzhong/CompleteParameter.vim'
+Plugin 'pboettch/vim-cmake-syntax'
+Plugin 'jeaye/color_coded'
+Plugin 'rdnetto/YCM-Generator'
 
 
 " The following are examples of different formats supported.
@@ -55,7 +58,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax on
-colorscheme Benokai
+set termguicolors
+let g:gruvbox_italic=1
+set background=dark
+colorscheme gruvbox
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 " let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -112,3 +118,8 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
   augroup END
 endif
+
+" CSS autocompletion
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
