@@ -21,9 +21,10 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tenfyzhong/CompleteParameter.vim'
 Plugin 'pboettch/vim-cmake-syntax'
-Plugin 'jeaye/color_coded'
 Plugin 'rdnetto/YCM-Generator'
-
+Plugin 'majutsushi/tagbar'
+Plugin 'yggdroot/indentline'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -68,6 +69,7 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 
 autocmd FileType c,cpp,ts ClangFormatAutoEnable
 
+let g:clang_format#auto_format=1
 let g:clang_format#style_options = {
             \ "BasedOnStyle": "LLVM",
             \ "Language": "Cpp",
