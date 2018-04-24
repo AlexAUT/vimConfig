@@ -64,6 +64,12 @@ let g:gruvbox_italic=1
 set background=dark
 colorscheme gruvbox
 
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 
