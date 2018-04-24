@@ -67,9 +67,8 @@ colorscheme gruvbox
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 
-autocmd FileType c,cpp,ts ClangFormatAutoEnable
+autocmd FileType c,cpp ClangFormatAutoEnable
 
-let g:clang_format#auto_format=1
 let g:clang_format#style_options = {
             \ "BasedOnStyle": "LLVM",
             \ "Language": "Cpp",
@@ -124,4 +123,11 @@ endif
 " CSS autocompletion
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+
+" Autoindent
+let g:indentLine_enabled = 1
+
+" Folding
+set foldmethod=indent
+set foldlevelstart=20
 
