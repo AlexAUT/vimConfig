@@ -25,7 +25,7 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'majutsushi/tagbar'
 Plugin 'yggdroot/indentline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-
+Plugin 'morhetz/gruvbox'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -59,6 +59,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax on
+set encoding=utf-8
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark
@@ -136,4 +137,6 @@ let g:indentLine_enabled = 1
 " Folding
 set foldmethod=indent
 set foldlevelstart=20
+
+set clipboard=unnamed
 
