@@ -26,6 +26,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'yggdroot/indentline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'morhetz/gruvbox'
+Plugin 'tikhomirov/vim-glsl'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
