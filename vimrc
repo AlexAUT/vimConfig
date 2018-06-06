@@ -99,7 +99,7 @@ set smartindent
 set cino=>N-s,g0
 
 " YouCompleteMe key bindings
-:nmap <F5> :YcmCompleter GetType <CR>
+:nmap <F5> :YcmCompleter FixIt <CR>
 
 :nmap <F2> :YcmCompleter GoToDefinition <CR>
 :nmap <F3> :YcmCompleter GoToType <CR>
