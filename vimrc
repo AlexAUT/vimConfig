@@ -25,8 +25,9 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'majutsushi/tagbar'
 Plugin 'yggdroot/indentline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'morhetz/gruvbox'
+Plugin 'dracula/vim'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'vim-scripts/a.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -64,7 +65,7 @@ set encoding=utf-8
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark
-colorscheme gruvbox
+colorscheme dracula
 
 " Persistent undo
 set undofile
@@ -106,7 +107,8 @@ set cino=>N-s,g0
 :nmap <F4> :YcmCompleter GoToReferences <CR>
 
 " Ignore git files in file search
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --recurse-submodules --exclude-standard']
+let g:ctrlp_working_path_mode = '0'
 
 " Increase git gutter update interval
 set updatetime=100
@@ -137,7 +139,7 @@ let g:indentLine_enabled = 1
 
 " Folding
 set foldmethod=indent
-set foldlevelstart=20
+set foldlevelstart=1
 
 set clipboard=unnamed
 
