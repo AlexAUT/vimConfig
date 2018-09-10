@@ -27,7 +27,7 @@ Plugin 'yggdroot/indentline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'dracula/vim'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'vim-scripts/a.vim'
+Plugin 'derekwyatt/vim-fswitch'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -102,9 +102,11 @@ set cino=>N-s,g0
 " YouCompleteMe key bindings
 :nmap <F5> :YcmCompleter FixIt <CR>
 
-:nmap <F2> :YcmCompleter GoToDefinition <CR>
-:nmap <F3> :YcmCompleter GoToType <CR>
-:nmap <F4> :YcmCompleter GoToReferences <CR>
+:nmap <F1> :YcmCompleter GetType <CR>
+:nmap <F2> :YcmCompleter GoTo <CR>
+:nmap <F3> :YcmCompleter GoToReferences <CR>
+:nmap <F5> :YcmCompleter FixIt <CR>
+:nmap <F4> :FSHere <CR>
 
 " Ignore git files in file search
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --recurse-submodules --exclude-standard']
@@ -143,3 +145,16 @@ set foldlevelstart=100
 
 set clipboard=unnamed
 
+"Setup fswitch to search in inc for header
+au! BufEnter *.cpp let b:fswitchdst = 'hpp,h' | let b:fswitchlocs = 'reg:/src/include'
+au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'reg:/include/src'
+
+"Disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+noremap! <Up> <NOP>
+noremap! <Down> <NOP>
+noremap! <Left> <NOP>
+noremap! <Right> <NOP>
