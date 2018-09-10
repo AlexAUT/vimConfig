@@ -111,7 +111,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --recurse-submodules 
 let g:ctrlp_working_path_mode = '0'
 
 " Increase git gutter update interval
-set updatetime=100
+set updatetime=200
 
 " Minimal setup for parameter completion
 " inoremap <silent><expr> ( complete_parameter#pre_complete("()")
@@ -139,7 +139,7 @@ let g:indentLine_enabled = 1
 
 " Folding
 set foldmethod=indent
-set foldlevelstart=1
+set foldlevelstart=100
 
 set clipboard=unnamed
 
