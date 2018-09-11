@@ -135,6 +135,7 @@ endif
 " CSS autocompletion
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+au BufRead,BufNewFile *.cuh set filetype=cuda
 
 " Autoindent
 let g:indentLine_enabled = 1
@@ -148,6 +149,8 @@ set clipboard=unnamed
 "Setup fswitch to search in inc for header
 au! BufEnter *.cpp let b:fswitchdst = 'hpp,h' | let b:fswitchlocs = 'reg:/src/include'
 au! BufEnter *.hpp let b:fswitchdst = 'cpp' | let b:fswitchlocs = 'reg:/include/src'
+au! BufEnter *.cu let b:fswitchdst = 'cuh,hpp,h' | let b:fswitchlocs = 'reg:/include/src,../'
+au! BufEnter *.cuh let b:fswitchdst = 'cu,cpp' | let b:fswitchlocs = 'reg:/include/src'
 
 "Disable arrow keys
 noremap <Up> <NOP>
