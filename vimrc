@@ -28,6 +28,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'dracula/vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'morhetz/gruvbox'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -65,7 +66,7 @@ set encoding=utf-8
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark
-colorscheme dracula
+colorscheme gruvbox
 
 " Persistent undo
 set undofile
@@ -82,10 +83,10 @@ let g:clang_format#style_options = {
             \ "BasedOnStyle": "LLVM",
             \ "Language": "Cpp",
             \ "DerivePointerAlignment": "false",
+            \ "AllowShortFunctionsOnASingleLine": "Inline",
             \ "PointerAlignment": "Left",
             \ "ColumnLimit": "120",
             \ "BreakBeforeBraces": "Allman",
-            \ "AllowShortFunctionsOnASingleLine": "false",
             \ "AlwaysBreakTemplateDeclarations": "true",
             \ "IndentWidth": "2",
             \ "UseTab": "Never",
@@ -102,15 +103,15 @@ set cino=>N-s,g0
 " YouCompleteMe key bindings
 :nmap <F5> :YcmCompleter FixIt <CR>
 
-:nmap <F1> :YcmCompleter GetType <CR>
-:nmap <F2> :YcmCompleter GoTo <CR>
-:nmap <F3> :YcmCompleter GoToReferences <CR>
-:nmap <F5> :YcmCompleter FixIt <CR>
+:nmap <F2> :YcmCompleter GetType <CR>
+:nmap <F3> :YcmCompleter GoTo <CR>
 :nmap <F4> :FSHere <CR>
+:nmap <F5> :YcmCompleter FixIt <CR>
 
 " Ignore git files in file search
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --recurse-submodules --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'cd %s && ((git ls-files -c -o --exclude-standard && git ls-files --recurse-submodules --exclude-standard) | sort | uniq)']
 let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Increase git gutter update interval
 set updatetime=200
