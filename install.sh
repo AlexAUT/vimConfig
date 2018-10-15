@@ -23,4 +23,7 @@ sudo npm install -g typescript
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --js-completer --system-libclang
 
+cd ~/.vim/bundle/fzf
+./install -all
+
 echo "Finished!"

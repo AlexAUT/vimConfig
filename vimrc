@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Heorhiy/VisualStudioDark.vim'
@@ -28,7 +27,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'dracula/vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'derekwyatt/vim-fswitch'
-Plugin 'morhetz/gruvbox'
+Plugin 'mhartington/oceanic-next'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -66,7 +67,7 @@ set encoding=utf-8
 set termguicolors
 let g:gruvbox_italic=1
 set background=dark
-colorscheme gruvbox
+colorscheme OceanicNext
 
 " Persistent undo
 set undofile
@@ -108,10 +109,12 @@ set cino=>N-s,g0
 :nmap <F4> :FSHere <CR>
 :nmap <F5> :YcmCompleter FixIt <CR>
 
-" Ignore git files in file search
-let g:ctrlp_user_command = ['.git', 'cd %s && ((git ls-files -c -o --exclude-standard && git ls-files --recurse-submodules --exclude-standard) | sort | uniq)']
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_cmd = 'CtrlPMRU'
+" NERDTree
+:nmap <C-K> :NERDTreeFind <CR>
+
+" FZF
+:nmap <C-P> :Files <CR>
+:imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Increase git gutter update interval
 set updatetime=200
