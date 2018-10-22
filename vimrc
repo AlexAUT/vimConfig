@@ -110,7 +110,7 @@ set cino=>N-s,g0
 :nmap <F5> :YcmCompleter FixIt <CR>
 
 " NERDTree
-:nmap <C-K> :NERDTreeFind <CR>
+:nmap <F9> :NERDTreeFind <CR>
 
 " FZF
 :nmap <C-P> :Files <CR>

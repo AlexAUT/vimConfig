@@ -24,6 +24,6 @@ cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer --js-completer --system-libclang
 
 cd ~/.vim/bundle/fzf
-./install -all
+./install --all
 
 echo "Finished!"
