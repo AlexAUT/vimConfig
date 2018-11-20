@@ -30,6 +30,7 @@ Plugin 'derekwyatt/vim-fswitch'
 Plugin 'mhartington/oceanic-next'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'elixir-editors/vim-elixir'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
