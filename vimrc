@@ -79,6 +79,9 @@ set undoreload=10000
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" Close NERDTree if last buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 autocmd FileType c,cpp ClangFormatAutoEnable
 
 let g:clang_format#style_options = {
