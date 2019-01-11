@@ -13,7 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'Heorhiy/VisualStudioDark.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
@@ -21,10 +20,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tenfyzhong/CompleteParameter.vim'
 Plugin 'pboettch/vim-cmake-syntax'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'majutsushi/tagbar'
 Plugin 'yggdroot/indentline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'dracula/vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'mhartington/oceanic-next'
@@ -76,7 +73,7 @@ set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py"
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Close NERDTree if last buffer
@@ -84,6 +81,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 autocmd FileType c,cpp ClangFormatAutoEnable
 
+" Look for .clang_format file and provide a default configuration
+let g:clang_format#detect_style_file = 1
 let g:clang_format#style_options = {
             \ "BasedOnStyle": "LLVM",
             \ "Language": "Cpp",
@@ -95,6 +94,8 @@ let g:clang_format#style_options = {
             \ "AlwaysBreakTemplateDeclarations": "true",
             \ "IndentWidth": "2",
             \ "UseTab": "Never",
+            \ "ConstructorInitializerAllOnOneLineOrOnePerLine": "true",
+            \ "BreakConstructorInitializers": "AfterColon",
             \ }
 
 set number
