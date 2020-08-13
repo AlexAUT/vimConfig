@@ -1,4 +1,0 @@
-If the pluginInstall for YouCompleteMe hangs, just go into the youcompletme bundle folder and execute:
-
-git submodule update --init --recursive
-
